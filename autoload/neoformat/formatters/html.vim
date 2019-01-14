@@ -1,5 +1,13 @@
 function! neoformat#formatters#html#enabled() abort
-    return ['htmlbeautify', 'tidy', 'prettydiff']
+    return ['prettier', 'htmlbeautify', 'tidy', 'prettydiff']
+endfunction
+
+function! neoformat#formatters#html#prettier() abort
+    return {
+        \ 'exe': 'prettier_d',
+        \ 'args': ['--stdin', '--stdin-filepath', '"%:p"'],
+        \ 'stdin': 1
+        \ }
 endfunction
 
 function! neoformat#formatters#html#tidy() abort

@@ -19,7 +19,7 @@ endfunction
 
 function! neoformat#formatters#json#prettier() abort
     return {
-        \ 'exe': 'prettier',
+        \ 'exe': 'prettier_d',
         \ 'args': ['--stdin', '--stdin-filepath', '"%:p"', '--parser', 'json'],
         \ 'stdin': 1,
         \ }
